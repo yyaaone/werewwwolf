@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Werewolf Game</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Jersey+10&family=Silkscreen:wght@400;700&display=swap');
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: "Jersey 10", sans-serif;
+            background: url('img/wolf.png') no-repeat center center fixed;    
+            background-size: cover;
+        }
+
+        .container {
+            text-align: center;
+            color: #ffff;
+        }
+
+        h1 {
+            font-size: 8.3em;
+            margin: 0 0 20px 0;
+            text-shadow: 2px 2px 5px red;
+        }
+
+        /* From Uiverse.io by vikiWayne */ 
+        .button {
+            padding: 1em 2em;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            cursor: pointer;
+            color: #f0404b;
+            transition: all 1000ms;
+            font-size: 20px;
+            position: relative;
+            overflow: hidden;
+            outline: 2px solid #f0404b;
+        }
+        
+        button:hover {
+            color: #ffffff;
+            transform: scale(1.1);
+            outline: 2px solid #ff6262;
+            box-shadow: 4px 5px 17px -4px #930a00;
+        }
+        
+        button::before {
+            content: "";
+            position: absolute;
+            left: -50px;
+            top: 0;
+            width: 0;
+            height: 100%;
+            background-color: #d4222e;
+            transform: skewX(45deg);
+            z-index: -1;
+            transition: width 1000ms;
+        }
+        
+        button:hover::before {
+            width: 250%;
+        }
+  
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>W E R E W O L F</h1>
+        <button class="button" id="startButton">Start</button>
+    </div>
+    <script>
+        document.getElementById('startButton').addEventListener('click', function() {
+            window.location.href = 'rules.html';
+        });
+    </script>
+</body>
+</html>

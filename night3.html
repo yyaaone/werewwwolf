@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+        body{
+            background: url(img/night1.jpg) no-repeat center center fixed;  
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            font-family: Kanit, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .overlay {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 50px 100px;
+            border-radius: 10px;
+            text-align: center;
+            position: relative;
+        }
+
+        h1{
+            font-size: 3em;
+        }
+
+        .message {
+            font-size: 2em;
+            margin: 20px;
+        }
+
+        .countdown {
+            font-size: 2.7em;
+            font-weight: 500;
+            margin: 20px;
+        }
+
+        .countdown.hidden {
+            display: none;
+        }
+
+        .countdown.red {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay">
+        <h1>คืนที่ 3</h1>
+        <div class="message" id="message">หมาป่าถึงเวลาโหวตคนที่จะกำจัด</div>
+        <div class="countdown" id="countdown">40 <span>วินาที</span> </div>
+        <audio id="wolf-audio" src="sound/wolfvote.mp3"></audio>
+        <audio id="nurse-audio" src="sound/nursevote.mp3"></audio>
+        <audio id="seer-audio" src="sound/seervote.mp3"></audio>
+        <audio id="timeout-audio" src="sound/timeout.mp3"></audio>
+        <audio id="nightAudio" src="sound/night.mp3"></audio>
+    </div>
+
+    <script src="night3.js"></script>
+</body>
+</html>

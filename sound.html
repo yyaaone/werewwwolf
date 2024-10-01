@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="sound.css">
+    <link href="/website/css/uicons-sol" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>บทบาท</h1>
+        <div class="card-container">
+            <div class="card">
+                <div class="card-border-top">
+                </div>
+                <img src="img/wolf-3.png" alt="Image 1">
+                <p>หมาป่า</p>
+                <button onclick="playSound('sound/wolf.mp3')">เล่นเสียง</button>
+            </div>
+            <div class="card">
+                <div class="card-border-top">
+                </div>
+                <img src="img/farmer.png" alt="Image 2">
+                <p>ชาวบ้าน</p>
+                <button onclick="playSound('sound/farmer.mp3')">เล่นเสียง</button>
+            </div>
+            <div class="card">
+                <div class="card-border-top">
+                </div>
+                <img src="img/seer-2.png" alt="Image 3">
+                <p>ผู้หยั่งรู้</p>
+                <button onclick="playSound('sound/seer.mp3')">เล่นเสียง</button>
+            </div>
+            <div class="card">
+                <div class="card-border-top">
+                </div>
+                <img src="img/nurse-2.png" alt="Image 4">
+                <p>พยาบาล</p>
+                <button onclick="playSound('sound/nurse.mp3')">เล่นเสียง</button>
+            </div>
+            <div class="card">
+                <div class="card-border-top">
+                </div>
+                <img src="img/crazy.png" alt="Image 5">
+                <p>คนบ้า</p>
+                <button onclick="playSound('sound/crazy.mp3')">เล่นเสียง</button>
+            </div>
+        </div>
+        <audio id="audioPlayer" controls style="display:none;"></audio>
+        <!-- ปุ่ม Skip -->
+        <button class="skip-button" onclick="skipToNextPage()">Skip</button>
+        <script>
+            let timeout;
+
+            function playSound(soundFile) {
+                const audioPlayer = document.getElementById('audioPlayer');
+                audioPlayer.src = soundFile;
+                audioPlayer.play();
+                resetTimeout();
+            }
+
+            function resetTimeout() {
+                clearTimeout(timeout);
+                timeout = setTimeout(() => {
+                    window.location.href = 'role1.html';
+                }, 5000); // 5 วินาที
+            }
+
+            window.onload = function() {
+                const audioPlayer = document.getElementById('audioPlayer');
+                audioPlayer.src = 'sound/allrole.mp3'; // allrole.mp3
+                audioPlayer.play();
+                audioPlayer.onended = function() {
+                    resetTimeout();
+                };
+
+                // เมื่อคลิกปุ่มให้หยุดการนับถอยหลังและทำการเปลี่ยนหน้า
+                const actionButton = document.getElementById('actionButton');
+                actionButton.onclick = function() {
+                    clearTimeout(timeout);
+                    // เปลี่ยนไปที่หน้าอื่นที่คุณต้องการ
+                    window.location.href = 'someotherpage.html'; // เปลี่ยน URL ตามต้องการ
+                };
+            };
+            // ฟังก์ชันสำหรับปุ่ม Skip
+        function skipToNextPage() {
+            window.location.href = "role1.html";
+        }
+        </script>
+    </div>
+</body>
+</html>

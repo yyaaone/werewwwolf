@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rule for play</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Kanit, sans-serif;
+            background-color: rgb(158, 11, 11);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 18px;
+            border-radius: 10px;
+            text-align: center;
+            width: 66%;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            color: black;
+        }
+
+        .instructions {
+            font-size: 1.1rem;
+            text-align: left;
+            padding-left: 80px;
+            padding-right: 80px;
+            margin-bottom: 5px;
+            line-height: 1.6;
+            color: black;
+        }
+
+        p {
+            font-weight: 600;
+        }
+
+        .a1 {
+            margin-bottom: -12px;
+        }
+
+        /* ปุ่ม Skip ตรงขวาล่าง */
+        .skip-button {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #ff4444;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .skip-button:hover {
+            background-color: #ff2222;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>วิธีการเล่น</h1>
+        <div class="instructions">
+            <p>1. ตัวเว็บไซต์จะพาผู้เล่นทุกคนไปทำความรู้จักกับบทบาททั้ง 5 บทบาท หากผู้เล่นต้องการทราบบทบาทอีกครั้ง <br>หากไม่มีการกดเล่นเสียงภายใน 20 วินาที เกมจะเริ่มขึ้น</p>
+            <p>2. ผู้ดำเนินเกมจะแจกบทบาทให้ผู้เล่นแต่ละคน ผู้เล่นมีเวลาตรวจสอบบทบาทของตัวเอง 30 วินาที</p>
+            <p>3. เข้าสู่ช่วงเช้าวันแรก ให้ผู้เล่นทุกท่านแนะนำตัวเองโดยเข้าถึงบทบาทที่ตัวเองได้รับ มีเวลาทั้งหมด 2 นาที</p>
+            <p class="a1">4. เข้าสู่ช่วงกลางคืน จะดำเนินเกมโดยห้ามใช้เสียง
+                <ul>
+                    <li>ผู้ที่ได้บทบาทหมาป่าโหวตเลือกผู้เล่นที่ต้องการจะกำจัด (40 วินาที)</li>
+                    <li>ผู้ที่ได้บทบาทพยาบาลโหวตคนที่ต้องการจะรักษา  (40 วินาที)</li>
+                    <li>ผู้ที่ได้บทบาทผู้หยั่งรู้ โหวตเลือกดูบทบาทผู้เล่น 1 ท่าน (40 วินาที)</li>
+                </ul>
+            </p>
+            <p class="a1">5. เข้าสู่ช่วงเช้าวันที่ 2 ให้ผู้เล่นทุกคนตรวจสอบที่ตะกร้าของตัวเอง มีเวลาทั้งหมด 30 วินาที
+                <ul>
+                    <li>หากพบลูกเต๋าหมายเลข 1 แสดงว่าผู้เล่นท่านนั้นโดนกำจัดจากเกมโดยหมาป่า</li>
+                    <li>หากพบลูกเต๋าหมายเลข 2 แสดงว่าผู้เล่นท่านนั้นถูกรักษาและปกป้องโดยพยาบาล</li>
+                </ul>
+            </p>
+            <p>6. ผู้เล่นทุกท่านต้องร่วมกันตามหาหมาป่า โดยสามารถโหวตผู้เล่นออก 1 ท่าน มีเวลาในการพูดคุยทั้งหมด 3 นาที และมีเวลาในการโหวต 30 วินาที</p>
+            <p>7. ผู้เล่นที่โดนโหวตออกบอกบทบาทของตัวเอง และแสดงว่าผู้เล่นท่านนั้นโดนกำจัดออกจากเกม</p>
+            <p>8. กฎการชนะเกม Werewolf ชาวบ้านชนะถ้าหมาป่าตาย | คนบ้าชนะถ้าคนบ้าตาย | ชาวบ้านถูกกำจัดจนหมดหรือเหลือเท่ากับจำนวนมนุษย์หมาป่า มนุษย์หมาป่าจะชนะ</p>
+            <p>9. เมื่อจบเกมให้ผู้คุมเกมทำการกดปุ่มจบเกม</p>
+        </div>
+        <audio id="rulesAudio" src="sound/allrule.mp3"></audio>
+
+        <!-- ปุ่ม Skip -->
+        <button class="skip-button" onclick="skipToNextPage()">Skip</button>
+    </div>
+
+    <script>
+        window.onload = function() {
+            var audio = document.getElementById('rulesAudio');
+
+            // เล่นเสียงเมื่อเปิดหน้าเว็บ
+            audio.play();
+
+            // เมื่อเสียงจบ ให้เปลี่ยนหน้าไปยัง role1.html
+            audio.onended = function() {
+                window.location.href = "sound.html";
+            };
+        };
+
+        // ฟังก์ชันสำหรับปุ่ม Skip
+        function skipToNextPage() {
+            window.location.href = "sound.html";
+        }
+    </script>
+</body>
+</html>
